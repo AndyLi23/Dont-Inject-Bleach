@@ -16,16 +16,15 @@ if prev != yesterday:
     URL = "https://github.com/CSSEGISandData/COVID-19/blob/master/csse_covid_19_data/csse_covid_19_daily_reports/" + yesterday + ".csv"
     r = get(URL)
     bs = BS(r.content, "html.parser")
-    '''with open("../corona-data/day.txt", "w") as fout:
+    
+    with open("../corona-data/day.txt", "w") as fout:
         fout.write(yesterday)
-        fout.close()'''
+        fout.close()
     
     with open("../corona-data/data.txt", "w") as fout:
         writer = csv.writer(fout)
-        temp = []
-        for i in bs.find_all("td", attrs={"class":"blob-num js-line-number"}):
-            print(i)
-        
+        for i in bs.find_all("tr", attrs={"class":"js-file-line"}):
+            writer.writerow(i.get_text().strip().split("\n"))
         fout.close()
 
             
