@@ -35,16 +35,19 @@ a {
 body {
   font-family: "Abel";
   font-size: 22px;
+  overflow: hidden;
 }
 
 .main-title {
   text-align: center;
   font-size: 60px;
+  color: gainsboro;
 }
 
 .main-subtitle {
   text-align: center;
   font-size: 20px;
+  color: gainsboro;
 }
 
 .navbar-fixed-left {
@@ -54,9 +57,24 @@ body {
   height: 100%;
 }
 
+.navbar-custom {
+  background-color: black;
+  opacity: 60%;
+  color: gainsboro;
+  padding-top: 2%;
+}
+
+.nav-text {
+  color: gainsboro;
+}
+
 .navbar-fixed-left .navbar-nav > li {
   float: none;
   width: 139px;
+}
+
+.navbar-nav > li > a {
+  padding-bottom: 20% !important;
 }
 
 .navbar-fixed-left + .container {
@@ -72,4 +90,74 @@ body {
   text-align: center;
   margin-top: 2%;
   font-size: 15px;
+  color: rgb(104, 62, 62);
+  opacity: 100%;
+}
+
+#footer {
+  background-color: black;
+  opacity: 50%;
+
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+
+@-webkit-keyframes background {
+  0% {
+    background-position: 90% 0%;
+  }
+  50% {
+    background-position: 11% 100%;
+  }
+  100% {
+    background-position: 90% 0%;
+  }
+}
+@-moz-keyframes background {
+  0% {
+    background-position: 90% 0%;
+  }
+  50% {
+    background-position: 11% 100%;
+  }
+  100% {
+    background-position: 90% 0%;
+  }
+}
+@keyframes background {
+  0% {
+    background-position: 90% 0%;
+  }
+  50% {
+    background-position: 11% 100%;
+  }
+  100% {
+    background-position: 90% 0%;
+  }
+}
+
+#wrap {
+  background: linear-gradient(233deg, #22bf89, #bf2289);
+  background-size: 400% 400%;
+
+  -webkit-animation: background 17s ease infinite;
+  -moz-animation: background 17s ease infinite;
+  animation: background 17s ease infinite;
+
+  margin-left: 170px;
+  position: relative;
+}
+
+#nav-sec {
+  width: 170px;
+  height: 100%;
+  float: left;
+
+  background: linear-gradient(233deg, #22bf89, #bf2289);
+  background-size: 400% 400%;
+
+  -webkit-animation: background 17s ease infinite;
+  -moz-animation: background 17s ease infinite;
+  animation: background 17s ease infinite;
 }
