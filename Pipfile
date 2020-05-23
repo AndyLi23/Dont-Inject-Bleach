@@ -8,6 +8,11 @@ verify_ssl = true
 [packages]
 flask = "*"
 gunicorn = "*"
+requests = "*"
+bs4 = "*"
+numpy = "*"
+opencv-python = "*"
+python-dotenv = "*"
 
 [requires]
 python_version = "3.8"
