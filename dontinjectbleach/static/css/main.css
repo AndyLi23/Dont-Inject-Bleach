@@ -1,9 +1,7 @@
-
 /**
  * @file
  * Main stylesheet file.
  */
-
 
 /*****************************************************************************
  * Main elements
@@ -16,21 +14,62 @@ a {
 }
 ::selection {
   background: #555;
-  color: #FFF;
+  color: #fff;
 }
 ::-moz-selection {
   background: #555;
-  color: #FFF;
+  color: #fff;
 }
 ::-webkit-selection {
   background: #555;
-  color: #FFF;
+  color: #fff;
 }
 /* Main elements end */
-
 
 /*****************************************************************************
  * Various other styles
  ****************************************************************************/
 
 /* Various other styles end */
+
+body {
+  font-family: "Abel";
+  font-size: 22px;
+}
+
+.main-title {
+  text-align: center;
+  font-size: 60px;
+}
+
+.main-subtitle {
+  text-align: center;
+  font-size: 20px;
+}
+
+.navbar-fixed-left {
+  width: 170px;
+  position: fixed;
+  border-radius: 0;
+  height: 100%;
+}
+
+.navbar-fixed-left .navbar-nav > li {
+  float: none;
+  width: 139px;
+}
+
+.navbar-fixed-left + .container {
+  padding-left: 160px;
+}
+
+.navbar-fixed-left .navbar-nav > li > .dropdown-menu {
+  margin-top: -50px;
+  margin-left: 140px;
+}
+
+.footer-text {
+  text-align: center;
+  margin-top: 2%;
+  font-size: 15px;
+}
