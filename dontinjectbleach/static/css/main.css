@@ -42,6 +42,7 @@ body {
   text-align: center;
   font-size: 60px;
   color: gainsboro;
+  margin-bottom: 2%;
 }
 
 .main-subtitle {
@@ -137,6 +138,17 @@ body {
   }
 }
 
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 #wrap {
   background: linear-gradient(233deg, #22bf89, #bf2289);
   background-size: 400% 400%;
@@ -160,4 +172,41 @@ body {
   -webkit-animation: background 17s ease infinite;
   -moz-animation: background 17s ease infinite;
   animation: background 17s ease infinite;
+}
+.navbar- > li > a:hover,
+.navbar > li > a:focus {
+  border-radius: 10px;
+}
+
+.sign-up-btn {
+  margin-top: 7%;
+}
+
+.log-in-btn {
+  margin-bottom: 15%;
+}
+
+.button {
+  width: 140px;
+  height: 45px;
+  font-family: "Roboto", sans-serif;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: #000;
+  background-color: #fff;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+}
+
+button:hover {
+  background-color: #2ee59d;
+  box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+  color: #fff;
+  transform: translateY(-7px);
 }

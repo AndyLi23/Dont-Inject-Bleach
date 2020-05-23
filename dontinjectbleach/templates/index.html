@@ -1,9 +1,20 @@
 {% extends 'base.html' %} {% block title %}Home{% endblock %} {% block content
 %}
 
-<div class="page-header">
-  <h1 class="main-title">Don't Inject Bleach</h1>
+<div class="page-header" style="text-align: center; border: none">
+
+  <div class="title-text">
+    <h1 class="main-title"><b>Don't Inject Bleach</b></h1>
+  </div>
   <p class="main-subtitle"></code>Just don't. Use this site instead. </p>
+
+  <button class="button sign-up-btn" onclick="location.href = '/signup'">Sign Up</button>
+  <hr width=10%>
+  <button class="button log-in-btn" onclick="location.href = '/login'">Log In</button>
+  <br>
+
+  <h1 style="color: gainsboro; margin-bottom: 2%;">What Is This?</h1>
+  <button class="button" onclick="location.href = '/about'">About</button>
 </div>
 
 {% endblock %}
