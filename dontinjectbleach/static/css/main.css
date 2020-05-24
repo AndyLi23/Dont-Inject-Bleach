@@ -7,23 +7,11 @@
  * Main elements
  ****************************************************************************/
 html {
-  overflow-y: scroll;
 }
 a {
   cursor: pointer;
 }
-::selection {
-  background: #555;
-  color: #fff;
-}
-::-moz-selection {
-  background: #555;
-  color: #fff;
-}
-::-webkit-selection {
-  background: #555;
-  color: #fff;
-}
+
 /* Main elements end */
 
 /*****************************************************************************
@@ -36,6 +24,10 @@ body {
   font-family: "Abel";
   font-size: 22px;
   overflow: hidden;
+}
+
+a {
+   outline: 0 !important;
 }
 
 .main-title {
@@ -71,11 +63,12 @@ body {
 
 .navbar-fixed-left .navbar-nav > li {
   float: none;
-  width: 139px;
+  width: 170px;
+  margin-left: -30px;
 }
 
 .navbar-nav > li > a {
-  padding-bottom: 20% !important;
+  padding: 20%;
 }
 
 .navbar-fixed-left + .container {
@@ -209,4 +202,79 @@ button:hover {
   box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
   color: #fff;
   transform: translateY(-7px);
+}
+
+.panel,
+.panel-unexpandable {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  padding: 10px 20px;
+  color: #333;
+}
+
+.panel,
+.panel-unexpandable > a{
+  color: #333;
+}
+
+.panel:hover {
+  transform: scale(1.05);
+  background: rgba(255, 255, 255, 0.4);
+  color: #444 !important;
+}
+
+.panel,
+.panel-unexpandable {
+  margin-bottom: 30px;
+  float: left; 
+  width: 100%;
+}
+
+.corona-publish-date,
+.corona-details,
+.corona-headline {
+  color: #333;
+}
+
+.corona-news-link:hover {
+  color: #555 !important;
+  text-decoration: none !important;
+}
+
+.signup-div {
+  text-align: center;
+}
+
+.field {
+  margin-bottom: 1%;
+}
+
+.page-form {
+  margin-top: 4%;
+}
+
+.panel-txt {
+  max-width: 60%;
+  float: left;
+}
+
+.panel-unexpandable > .panel-txt {
+  max-width: 100% !important;
+}
+
+.panel-img {
+  max-width: 35%;
+  float: right; 
+  margin: 10px 10px 10px 50px; 
+  border-radius: 10px;
+}
+
+#map {
+  height: 100%;
+}
+.map-container {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: auto;
 }

@@ -1,0 +1,17 @@
+{% extends 'base.html' %} {% block title %}COVID-19 - DontInjectBleach{%
+endblock %} {% block content %}
+<div class="home-div">
+    <div class="panel-unexpandable">
+        <div class="panel-txt">
+            <h1>Latest News</h1>
+            {% for i in news %}
+            <a class="corona-news-link" href="{{ i['href'] }}">
+                <h2 class="corona-headline">{{ i['headline'] }}</h2>
+                <p class="corona-details">{{ i['publish-date'] }}</p>
+                <h5 class="corona-publish-date">{{ i['details'] }}</h5>
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}

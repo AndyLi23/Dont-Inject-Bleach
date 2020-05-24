@@ -13,6 +13,9 @@ bs4 = "*"
 numpy = "*"
 opencv-python = "*"
 python-dotenv = "*"
+flask-login = "*"
+flask-sqlalchemy = "*"
+python-google-places = "*"
 
 [requires]
 python_version = "3.8"

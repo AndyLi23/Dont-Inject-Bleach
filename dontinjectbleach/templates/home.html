@@ -1,0 +1,36 @@
+{% extends 'base.html' %} {% block title %}Home - DontInjectBleach{% endblock %}
+{% block content%}
+<div class="home-div">
+    <a href="/coronavirus">
+    <div id = "corona-panel" class="panel">
+        <div class="panel-txt">
+        <h1>COVID-19</h1>
+        <h3>2019-2020 Coronavirus Disease - Info, Statistics, and News</h3>
+        </div>
+        <img class="panel-img" src="https://www.un.org/sites/un2.un.org/files/styles/5x4-front-thumbnail/public/field/image/1580758761.9058.jpg?itok=VoI_xJPD" alt="Coronavirus" height="200px">
+    </div>
+    </a>
+</div>
+<div class="home-div">
+    <a href="/hospital">
+    <div class="panel">
+        <div class="panel-txt">
+        <h1>Find Me Hospitals</h1>
+        <h3>Need a hospital? This can search for quality, cheap, or nearby hospitals based on user ratings and other statistics.</h3>
+        </div>
+        <img class="panel-img" src="https://i.ya-webdesign.com/images/hospital-clipart-8.png" alt="Hospital" height="200px">
+    </div>
+    </a>
+</div>
+<div class="home-div">
+    <a href="/selfdiagnosis">
+    <div class="panel">
+        <div class="panel-txt">
+        <h1>Self Diagnose Coronavirus</h1>
+        <h3>Do you think you're symptomatic? Take this AI-assisted quiz to determine for sure.</h3>
+        </div>
+        <img class="panel-img" src="https://www.clipartkey.com/mpngs/m/116-1167378_transparent-quiz-clip-art.png" alt="Hospital" height="200px">
+    </div>
+    </a>
+</div>
+{% endblock %}
