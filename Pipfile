@@ -18,6 +18,8 @@ flask-sqlalchemy = "*"
 python-google-places = "*"
 nltk = "*"
 datetime = "*"
+geopy = "*"
+geocoder = "*"
 
 [requires]
 python_version = "3.8"

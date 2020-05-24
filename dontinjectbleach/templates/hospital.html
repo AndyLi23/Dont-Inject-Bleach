@@ -1,20 +1,30 @@
-
 {% extends 'base.html' %} {% block title %}COVID-19 - DontInjectBleach{%
-    endblock %} {% block content %}
-
-
-<div class="map-container">
-    <div id="map"></div>
+endblock %} {% block content %}
+<div class="hospital-container">
+  <div class="panel-unexpandable" style="padding-bottom: 30px;">
+  <h1>Find Nearby Hospitals</h1>
+  <h3>Enter your location in this form: CITY, STATE, ZIP_CODE</h3>
+  <form action="/hospital" method="POST">
+    <input type="place" name="place" class="hospital-input" style="background: rgba(255, 255, 255, 0.3); border: none;"/><br />
+    <button
+      type="submit"
+      class="button is-block is-info is-large is-fullwidth"
+      style="margin-top: 2%; padding: 0 !important; font-size: 14px;"
+    >
+      Submit
+    </button>
+  </div>
+  </form>
+  {% if s %}
+  <br><br><br><br><br><br><br><br><br><br>
+  <h1>Results</h1>
+  <hr width="25%" align="left">
+  {% endif %}
+  {% for i in place %}
+  <a href="{{ i["href"] }}">
+    <h2 style="color: #333 !important; margin-top: 25px;">{{ i["name"] }}</h2>
+    <h4 style="color: #333 !important; margin-bottom: 25px;">{{ i["address"] }}<br>{{ i["detail1"] }}<br>{{ i["detail2"] }}</h4>
+  </a>
+  {% endfor %}
 </div>
-
-<script>
-    var map;
-    function initMap() {
-      map = new google.maps.Map(document.getElementById('map'), {
-        center: {lat: -34.397, lng: 150.644},
-        zoom: 8
-      });
-    }
-</script>
-
 {% endblock %}

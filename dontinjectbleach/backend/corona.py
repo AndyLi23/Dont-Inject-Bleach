@@ -28,11 +28,11 @@ def updateCorona():
             fout.write(yesterday + "\n" + other)
             fout.close()
         
-        with open("dontinjectbleach/corona-data/data.csv", "w") as fout:
+        with open("dontinjectbleach/corona-data/data" + yesterday + ".csv", "w+") as fout:
             writer = csv.writer(fout)
             for i in bs.find_all("tr", attrs={"class":"js-file-line"}):
                 writer.writerow(i.get_text().strip().split("\n"))
             fout.close()
-
             
-
+        condense_corona()
+            

@@ -3,7 +3,42 @@
 
 
 <div class="form-diagnosis" style="text-align: center;">
-    <h1 style="color: gainsboro">Diagnosis</h1>
+    <h1 style="color: gainsboro"><b>Self Diagnosis</b></h1>
+    <hr width=20%>
+    <p style="color: gainsboro"><b>It's Simple!</b></p>
+    <h1>Score: {{ avg }}</h1>
+    <div class="boxes">
+        <form action="/selfdiagnosis" method="POST">
+            <input type="checkbox" id="box-1" name="box1" value="box1">
+        <label for="box-1">Direct contact with another person</label>
+      
+        <input type="checkbox" id="box-2" name="box2" value="box2">
+        <label for="box-2">Fever of 100 or above</label>
+      
+        <input type="checkbox" id="box-3" name="box3" value="box3">
+        <label for="box-3">Trouble Breathing</label>
+
+        <input type="checkbox" id="box-4" name="box4" value="box4">
+        <label for="box-4">Chills</label>
+
+        <input type="checkbox" id="box-5" name="box5" value="box5">
+        <label for="box-5">Muscle Aches</label>
+
+        <input type="checkbox" id="box-6" name="box6" value="box6">
+        <label for="box-6">Sore Throat</label>
+
+        <input type="checkbox" id="box-7" name="box7" value="box17">
+        <label for="box-7">Loss of Smell/Taste</label>
+
+        <input type="checkbox" id="box-8" name="box8" value="box8">
+        <label for="box-8">Nausea/Vomiting</label>
+
+        <input type="checkbox" id="box-9" name="box9" value="box9">
+        <label for="box-9">Headache</label>
+
+        <button type="submit" class="button is-block is-info is-large is-fullwidth" style="margin-top: 5%">Submit</button>
+        </form>
+    </div>
 </div>
     
 

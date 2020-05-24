@@ -5,7 +5,8 @@ from . import db
 from flask_login import login_user, logout_user, login_required, current_user
 from dontinjectbleach.backend.corona import updateCorona
 from dontinjectbleach.backend.corona_news import updateCoronaNews
-import csv
+from dontinjectbleach.backend.condense_corona import condense_corona
+import csv, json
 from random import randint
 from numpy.random import permutation
 from nltk.classify import NaiveBayesClassifier
@@ -15,6 +16,7 @@ from nltk.sentiment.vader import SentimentIntensityAnalyzer
 from nltk import tokenize
 from nltk.sentiment.util import *
 from datetime import datetime
+from dontinjectbleach.backend.hospital import search
 
 routes = Blueprint('routes', __name__)
 
@@ -40,6 +42,26 @@ def about():
 @routes.route('/login')
 def login():
     return render_template('login.html')
+
+@routes.route("/trackerdata")
+@login_required
+def trackerdata():
+
+    prevscore = -1
+    if current_user.symptoms:
+        prevscore = float(current_user.symptoms.split("^!@")[-2].split("[][]")[1])
+
+    data = []
+    data.append(["Timestamp", "AI Rating"])
+
+    for a in current_user.symptoms.split("^!@"):
+        if a != "":
+            data.append([a.split("[][]")[0], a.split("[][]")[1]])
+
+    print(prevscore)
+
+    return render_template("trackerdata.html", prev_score=prevscore, stam=json.dumps(data))
+
 
 @routes.route('/home')
 @login_required
@@ -117,46 +139,46 @@ def corona():
     
     idx = randint(0, len(news)-10)
     news = list(permutation(news[idx:idx+10]))
-    
-    data = {}
-    with open("dontinjectbleach/corona-data/data.csv", "r") as fin:
-        l = fin.readline()
-        for row in fin.read().split("\n")[:-1]:
-            temp = {}
-            r = []
-            i = 0
-            for j in range(len(row)):
-                if j == len(row)-1:
-                    r.append(row[i:j+1])
-                elif row[j] == "," and row[j+1] != " ":
-                    r.append(row[i:j])
-                    i = j+1
-            temp["active"], temp["recovered"], temp["dead"], temp["confirmed"] = r[-2], r[-3], r[-4], r[-5]
-            if r[-1][0] == "\"":
-                z = r[-1][1:-1]
-            else:
-                z = r[-1]
-            for i in range(len(z.split(", "))):
-                if ", ".join(z.split(", ")[i:]) not in data.keys():
-                    data[", ".join(z.split(", ")[i:])] = temp
-                else:
-                    prev = data[", ".join(z.split(", ")[i:])]
-                    new = {}
-                    new["active"] = str(int(temp["active"]) + int(prev["active"]))
-                    new["recovered"] = str(int(temp["recovered"]) + int(prev["recovered"]))
-                    new["dead"] = str(int(temp["dead"]) + int(prev["dead"]))
-                    new["confirmed"] = str(int(temp["confirmed"]) + int(prev["confirmed"]))
-                    data[", ".join(z.split(", ")[i:])] = new
-    
+    data = ""
+    with open('dontinjectbleach/corona-data/json_corona.json') as json_file:
+        data = json.load(json_file)
+    # with open("dontinjectbleach/corona-data/corona_condensed1.txt") as fin:
+    #     data += fin.read()
+    # with open("dontinjectbleach/corona-data/corona_condensed2.txt") as fin:
+    #     data += fin.read()
+        
     return render_template('corona.html', news=news, data=data)
 
 @routes.route('/hospital')
 def selddiog():
-    return render_template('hospital.html')
+    return render_template('hospital.html', place="", s=False)
 
 @routes.route('/selfdiagnosis')
 def hospital():
     return render_template('selfdiagnosis.html')
+
+@routes.route('/selfdiagnosis', methods=['POST'])
+def selfdiag_post():
+
+    arr = [7,8,10,6,6,4,7,4,2]
+
+    avg = 0
+    for i in range(9):
+        if request.form.get("box%s" % str(i+1)) != None:
+            avg += arr[i]
+    totalAvg = avg / sum(arr)
+        
+    return render_template('selfdiagnosis.html', avg=round(totalAvg, 2))
+
+@routes.route('/hospital', methods=['POST'])
+def hospital_post():
+    place = request.form.get('place')
+    s = search(place)
+    print(s)
+    if place:
+        return render_template('hospital.html', place=s, s=True)
+    return render_template('hospital.html', place="", s=False)
+
 
 @routes.route('/signup', methods=['POST'])
 def signup_post():

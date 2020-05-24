@@ -3,13 +3,13 @@
 
 <div class="panel">
     <div class="how-feeling" style="text-align: center">
-        <h1 style="margin-bottom: 4%;">AI-Assisted Coronavirus Probability Tracker</h1>
+        <h1 style="margin-bottom: 4%;">AI-Assisted Health Tracker</h1>
         <form method="POST" action="/home">
             <h2>How Are You Feeling?</h2>
             <textarea type="text" id="fname" name="fname" style="margin-bottom: 2%;"></textarea>
     
             {% if ten_passed %}
-            <p>Input details about your health or feelings. To properly track, you won't be able to input again for 10 minutes.</p>
+            <p>Input details about your health or feelings. This will be analyzed for your benefit.<br /> To properly track, you won't be able to input again for 10 minutes.</p>
             <p >Please format in complete sentences.</p>
             <button type="submit" class="button is-block is-info is-large is-fullwidth" style="margin-top: 2%">Submit</button>
             <h2><a href="/trackerdata">See Data</a></h2>
@@ -34,17 +34,6 @@
     </a>
 </div>
 <div class="home-div">
-    <a href="/hospital">
-    <div class="panel">
-        <div class="panel-txt">
-        <h1>Find Me Hospitals</h1>
-        <h3>Need a hospital? This can search for quality, cheap, or nearby hospitals based on user ratings and other statistics.</h3>
-        </div>
-        <img class="panel-img" src="https://i.ya-webdesign.com/images/hospital-clipart-8.png" alt="Hospital" height="200px">
-    </div>
-    </a>
-</div>
-<div class="home-div">
     <a href="/selfdiagnosis">
     <div class="panel">
         <div class="panel-txt">
@@ -52,6 +41,17 @@
         <h3>Do you think you're symptomatic? Take this AI-assisted quiz to determine for sure.</h3>
         </div>
         <img class="panel-img" src="https://www.clipartkey.com/mpngs/m/116-1167378_transparent-quiz-clip-art.png" alt="Hospital" height="200px">
+    </div>
+    </a>
+</div>
+<div class="home-div">
+    <a href="/hospital">
+    <div class="panel">
+        <div class="panel-txt">
+        <h1>Find Me Hospitals</h1>
+        <h3>Need a hospital? This can search for quality, cheap, or nearby hospitals based on user ratings and other statistics.</h3>
+        </div>
+        <img class="panel-img" src="https://i.ya-webdesign.com/images/hospital-clipart-8.png" alt="Hospital" height="200px">
     </div>
     </a>
 </div>
