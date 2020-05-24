@@ -16,7 +16,12 @@ def updateCorona():
 
     if prev != yesterday:
         URL = "https://github.com/CSSEGISandData/COVID-19/blob/master/csse_covid_19_data/csse_covid_19_daily_reports/" + yesterday + ".csv"
-        r = get(URL)
+        try:
+            r = get(URL)
+        except:
+            yesterday = str(today - timedelta(days=2)).split("-")
+            yesterday = "-".join([yesterday[1],yesterday[2],yesterday[0]])
+            URL = "https://github.com/CSSEGISandData/COVID-19/blob/master/csse_covid_19_data/csse_covid_19_daily_reports/" + yesterday + ".csv"
         bs = BS(r.content, "html.parser")
         
         with open("dontinjectbleach/corona-data/day.txt", "w") as fout:

@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "dontinjectbleach",
+  "private_key_id": "1ceedfc948517d63b9f58ba4f8cdf14147fbfb97",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQC1FDCaHY4xrzoJ\nOFhH/nXzWRF7ggAzB1xX19y94BjHKnoZ0/3g0At7YhyykYFPY7RYzShEw3KI49ID\nbLwDWIK1G0Ll8AnF8g25QFgE+VckeKRjWwpfZwe3qtGcOFWZlE96IovAs5qsvoEw\nCDrDNEMdCUDn9KsiYFdIQC1I1OjojkwnnHE2BhToZlJPTJI0Fm576bi5ez3iwEuu\nn/Rcp3oh5YktwIDAKAvkC18V4ZsdOOrFAcZH+6pWsQufZgbkDUlDIzd4pro7iuMZ\n1HZpPErrOrwlNk23rl2ELK0IriDDPLm7p2bY66mel+DFVBDJWw+TDoCa2gml3YQp\nYu6hPnWDAgMBAAECggEAJ4Pb5U3M0WfRLODoVvGfELcfmwmv/HK/QoYfLCpCjffl\nhExgKxaLYuXyqD8bblUuLnC6uGLEVD4O/uNUFhDTGS11SFM89r7PIt15N8CntRRE\nn0/nMBF+PCThMAuVFnooa9ktESTAfLDn5TDujdmSSbxStyuLyukmMuSaXTnlB5Zj\nLd7GE/CaehxPnZgaZkFaHfOwaSF/Gd6YZJT4/0oseyLq1j2E62D0CY0vf1kMKi/s\nYtNUPOKxK+HmcDQd4i2LiS2FJUh+aZ0cPZdo5mnWFEw+k8H4x+Ey7VxHOT9Jfg2q\nOd9ZzsbWeNMFKOt5eg2srFv93a2NRFgctDOxtix5QQKBgQD0M7NoNkVVAwf3/+rI\n1HMYas4Y/GabEI1tAiJajOJmv4JiefpI0EaO0+jHl8slQGQm7bBWb6mQVmJ1hOBa\nSMG2QeK/XRmlf0pqxiu+qz6sA/9iOJ3vDu9m0NwHRYv7iL74gI7Gf/b5oELRam4l\nV6OKSeBNHr8faH3fd14PxcJ/wQKBgQC908e93jRlPImYfPqXirpymnEeLhYbz6Kt\nyP18zvz0ko8B18Yyn1vkSNkVaTlmwnQciD+9y+9c6TAEFvM41zMXhCe3YSUIT4jQ\n/e6lJaD12eY6oCkOelAqLi/6ZN7hjPRpDb6e7lt+MTIlWLiJGZLP65PH5HlNyOPc\nyf+JrniGQwKBgQC2kyjhEyJG6ts8WYPJ3rymVsP7/kkgSgHSrDPPC2IBe9EZmyS6\n56y5AEobX6usEDZQvIiINzfJCCzYvB2YoqjhgOTsOckA6OhUaBEwnotexCZd4wKB\nRuNKNYErlp2P068jz8nvMqEOBPmv5CixlpJYw98FCaXO76qcNnyGwk4mgQKBgQCo\n71SPcLUIc3uwrWkGfHu5iiCpTzJ1xa9tIbYV4M/ViKikZzcHzjKlUv9+wopHHT7g\nNZEkg92dvhjxSstiBoJ9pysBU/71CnMkKxi6+GXq5eSyv95J+ChnoXspR6Pi7uKE\nq6q9HjtmbrnF6tMvkAbL60c1WetqgiHnWA2GpjK0qQKBgQCU2ynj5cGupbf4yb5e\n3Oz/Ecm5usaFL9RzRbCmWtgNSTyqV6MVQcAEZfHr5cKCJNC59dqOyfi+6HJElzFZ\nrsMJVdoSovvSpOQbnpcFqtR3YTAz6mLZkvyutJ8tSCWrcbYx9YRnyhVUw3Y75Vq6\ncandFOzzjhIlNLobRFsNBNN57w==\n-----END PRIVATE KEY-----\n",
+  "client_email": "dibsentiment@dontinjectbleach.iam.gserviceaccount.com",
+  "client_id": "105935250681912229984",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/dibsentiment%40dontinjectbleach.iam.gserviceaccount.com"
+}

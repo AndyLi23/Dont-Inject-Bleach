@@ -13,5 +13,18 @@ endblock %} {% block content %}
             {% endfor %}
         </div>
     </div>
+    <div class="panel-unexpandable">
+        <div class="panel-txt">
+            <h1>Coronavirus Data by County/Province/Country</h1>
+            <h3>Search for your county/province/country: </h3>
+            <p>{{ data }}</p>
+            <input>
+        </div>
+        <div id="temp-data-element" class="{{ data }}" style="display: none !important;"></div>
+    </div>
+    <script>
+        s = document.getElementById("temp-data-element").className
+        s.
+    </script>
 </div>
 {% endblock %}

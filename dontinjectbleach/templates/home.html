@@ -1,5 +1,27 @@
 {% extends 'base.html' %} {% block title %}Home - DontInjectBleach{% endblock %}
 {% block content%}
+
+<div class="panel">
+    <div class="how-feeling" style="text-align: center">
+        <h1 style="margin-bottom: 4%;">AI-Assisted Coronavirus Probability Tracker</h1>
+        <form method="POST" action="/home">
+            <h2>How Are You Feeling?</h2>
+            <textarea type="text" id="fname" name="fname" style="margin-bottom: 2%;"></textarea>
+    
+            {% if ten_passed %}
+            <p>Input details about your health or feelings. To properly track, you won't be able to input again for 10 minutes.</p>
+            <p >Please format in complete sentences.</p>
+            <button type="submit" class="button is-block is-info is-large is-fullwidth" style="margin-top: 2%">Submit</button>
+            <h2><a href="/trackerdata">See Data</a></h2>
+            {% endif %}
+            {% if not ten_passed %}
+            <p>Thanks for submitting! Your response has been processed, and your probability record is available below.</p>
+            <h2><a href="/trackerdata">See Data</a></h2>
+            {% endif %}
+        </form> 
+    </div>
+</div>
+
 <div class="home-div">
     <a href="/coronavirus">
     <div id = "corona-panel" class="panel">

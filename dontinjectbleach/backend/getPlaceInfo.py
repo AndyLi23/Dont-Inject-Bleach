@@ -22,4 +22,4 @@ for place in query_result.places:
     print (place.name) 
     print("Latitude", place.geo_location['lat']) 
     print("Longitude", place.geo_location['lng']) 
-    print() 
+    print()

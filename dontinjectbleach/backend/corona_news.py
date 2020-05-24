@@ -5,6 +5,15 @@ import csv
 
 
 def updateCoronaNews():
+    def match(a, b):
+        a,b = a.split(" "), b.split(" ")
+        temp = 0
+        for i in range(min(len(a), len(b))):
+            if a[i] == b[i]:
+                temp += 1
+        if temp/max(len(a), len(b)) > 0.8:
+            return True
+    
     with open("dontinjectbleach/corona-data/day.txt", "r") as fin:
         prev=fin.read().split("\n")
         prev, other = prev[0], prev[1].split(" ")
@@ -28,10 +37,14 @@ def updateCoronaNews():
                 elif cnt == 1:
                     temp['source-href'], temp['source'] = j['href'], j.get_text().strip()
                     break
+            
             temp["details"], temp["publish-date"] = [o.replace("...", "").strip() for o in i.get_text().split("\n") if o.replace("...", "").strip() !=
                                                     "" and o.strip() != "View details"][-1], [o.replace("...", "").strip() for o in i.get_text().split("\n") if o.replace("...", "").strip() !=
                                                                                             "" and o.strip() != "View details"][-2]
-            a.append(temp)
+            if temp["publish-date"][-1] != "." and temp["publish-date"][-1] != "!" and temp["publish-date"][-1] != ")" and temp["publish-date"][-1] != "?":
+                temp["publish-date"] = temp["publish-date"] + "..."
+            if not any(match(temp['headline'], i['headline']) for i in a):
+                a.append(temp)
 
         with open("dontinjectbleach/corona-data/news.csv", "w+") as fout:
             writer = csv.writer(fout)
