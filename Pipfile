@@ -16,8 +16,6 @@ python-dotenv = "*"
 flask-login = "*"
 flask-sqlalchemy = "*"
 python-google-places = "*"
-google-cloud = "*"
-google-cloud-language = "*"
 nltk = "*"
 datetime = "*"
 
