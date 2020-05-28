@@ -1,6 +1,7 @@
 from requests import get
 from bs4 import BeautifulSoup as BS
 from datetime import timedelta, datetime
+from .condense_corona import condense_corona
 import csv
 
 def updateCorona():
@@ -12,7 +13,6 @@ def updateCorona():
     today = datetime.utcnow().date()
     yesterday = str(today - timedelta(days=1)).split("-")
     yesterday = "-".join([yesterday[1],yesterday[2],yesterday[0]])
-
 
     if prev != yesterday:
         URL = "https://github.com/CSSEGISandData/COVID-19/blob/master/csse_covid_19_data/csse_covid_19_daily_reports/" + yesterday + ".csv"
@@ -34,5 +34,4 @@ def updateCorona():
                 writer.writerow(i.get_text().strip().split("\n"))
             fout.close()
             
-        condense_corona()
-            
+    condense_corona()
