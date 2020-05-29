@@ -1,6 +1,6 @@
 # Don't Inject Bleach
 
-A health webapp made with Flask and HTML/CSS/JS
+A health webapp made with Python Flask and HTML/CSS/JS
 
 ## Features
 
