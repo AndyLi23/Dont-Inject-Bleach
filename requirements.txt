@@ -22,7 +22,7 @@ jinja2==2.11.2
 joblib==0.15.1
 markupsafe==1.1.1
 nltk==3.5
-numpy==1.18.4
+numpy==1.22.0
 opencv-python==4.2.0.34
 protobuf==3.12.1
 pyasn1-modules==0.2.8
