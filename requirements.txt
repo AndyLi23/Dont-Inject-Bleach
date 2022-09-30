@@ -19,7 +19,7 @@ gunicorn==20.0.4
 idna==2.9
 itsdangerous==1.1.0
 jinja2==2.11.2
-joblib==0.15.1
+joblib==1.2.0
 markupsafe==1.1.1
 nltk==3.5
 numpy==1.18.4
